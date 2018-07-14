@@ -1,11 +1,11 @@
-#data "terraform_remote_state" "eu-site-1-net" {
-#  backend = "s3"
-#  config {
-#    bucket = "your-account-eu-site-1-net"
-#    key    = "eu-site-1-net"
-#    region = "eu-west-2"
-#  }
-#}
+data "terraform_remote_state" "eu-site-1-net" {
+  backend = "s3"
+  config {
+    bucket = "your-account-eu-site-1-net"
+    key    = "eu-site-1-net"
+    region = "eu-west-2"
+  }
+}
 
 resource "aws_key_pair" "web-layer" {
   key_name   = "web-layer"

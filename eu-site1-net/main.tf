@@ -1,10 +1,10 @@
-terraform {
-  backend "s3" {
-    bucket = "training-vdavyden-eu-site-1-net"
-    key    = "eu-site-1-net"
-    region = "eu-west-2"
-  }
-}
+#terraform {
+#  backend "s3" {
+#    bucket = "training-vdavyden-eu-site-1-net"
+#    key    = "eu-site-1-net"
+#    region = "eu-west-2"
+#  }
+#}
 
 module "vpc" {
   source = "../modules/aws_vpc"
@@ -50,12 +50,12 @@ ingress {
     protocol    = "tcp"
   }
 
-#ingress {
+# ingress {
 #    cidr_blocks = ["0.0.0.0/0"]  
 #    from_port   = 80
 #    to_port     = 80
 #    protocol    = "tcp"
-#}
+# }
 
 egress {
     protocol   = "tcp"
