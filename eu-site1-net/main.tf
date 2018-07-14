@@ -42,25 +42,27 @@ resource "aws_security_group" "web_sg" {
   vpc_id       = "${module.vpc.vpc_id}"
   name         = "web_sg"
   description  = "Allow WEB access"
+
 ingress {
     cidr_blocks = ["0.0.0.0/0"]  
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
   }
-ingress {
-    cidr_blocks = ["0.0.0.0/0"]  
-    from_port   = 80
-    to_port     = 80
-    protocol    = "tcp"
-  }
 
-  egress {
+#ingress {
+#    cidr_blocks = ["0.0.0.0/0"]  
+#    from_port   = 80
+#    to_port     = 80
+#    protocol    = "tcp"
+#}
+
+egress {
     protocol   = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
     from_port  = 0
     to_port    = 65535
-  }
+}
 
 tags = {
         Name = "web_sg"
